@@ -1,0 +1,33 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '1.2.3'
+    id 'maven'
+    id 'java'
+}
+
+group 'ninja.smirking'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://hub.spigotmc.org/nexus/content/groups/public'
+    }
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+}
+
+dependencies {
+    compile group: 'com.zaxxer', name: 'HikariCP', version: '2.4.3'
+    compile group: 'org.spigotmc', name: 'spigot-api', version: '1.8.8-R0.1-SNAPSHOT'
+}
+
+shadowJar {
+    classifier = ''
+    dependencies {
+        include(dependency(group: 'org.slf4j', name: 'slf4j-api', version: '1.7.12'))
+        include(dependency(group: 'com.zaxxer', name: 'HikariCP', version: '2.4.3'))
+    }
+}

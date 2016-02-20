@@ -1,0 +1,10 @@
+main: ninja.smirking.util.SqlPlugin
+author: Connor Spencer Harries
+version: 1.0-SNAPSHOT
+name: SQLAdmin
+description: Nobody should have to pay for a plugin that just executes a statement. https://www.spigotmc.org/resources/sqladmin.6857/
+commands:
+  sqladmin:
+    permission: dont.give.to.sleezy.people
+    description: Lazily execute SQL
+    default: false
