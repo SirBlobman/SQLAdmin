@@ -1,5 +1,6 @@
 package ninja.smirking.util;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -9,6 +10,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class SqlPlugin extends JavaPlugin {
@@ -22,6 +24,8 @@ public class SqlPlugin extends JavaPlugin {
         source.setJdbcUrl(String.format("jdbc:mysql://%s/%s", getConfig().getString("host", "localhost"), getConfig().getString("name", "minecraft")));
         source.setUsername(getConfig().getString("user", "minecraft"));
         source.setPassword(getConfig().getString("pass", "notch"));
+
+        getServer().getServicesManager().register(DataSource.class, source, this, ServicePriority.Normal);
     }
 
     @Override
