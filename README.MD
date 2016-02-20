@@ -3,7 +3,7 @@ sqladmin
 
 A free, open source alternative to a [plugin][overpriced-crap] with the same name that costs $2.50 more.
 
-![](http://i.imgur.com/bZJ00Mp.png)
+![](http://i.imgur.com/V8OI9tF.png)
 
 Oh, and it's under 200 lines *before* being compiled. Didn't take very long to make either. It even uses HikariCP for a whopping speed boost!
 
